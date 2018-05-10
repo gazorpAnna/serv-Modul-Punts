@@ -1,0 +1,13 @@
+.git
+node_modules
+coverage/
+
+.editorconfig
+.eslintignore
+.eslintrc
+.gitattributes
+.gitignore
+.travis.yml
+.yo-rc.json
+deploy.sh
+coveralls.js

@@ -1,0 +1,58 @@
+{
+  "name": "BadgeRelation",
+  "plural": "badgeRelations",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {    
+    "value": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "badges": {
+      "type": "belongsTo",
+      "model": "Badge",
+      "foreignKey": "badgeId"
+    },
+	  "groups": {
+      "type": "belongsTo",
+      "model": "Group",
+      "foreignKey": "groupId"
+    },
+    "schools": {
+      "type": "belongsTo",
+      "model": "School",
+      "foreignKey": "schoolId"
+    },
+    "students": {
+      "type": "belongsTo",
+      "model": "Student",
+      "foreignKey": "studentId"
+    }
+  },
+  "acls": [{
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}
